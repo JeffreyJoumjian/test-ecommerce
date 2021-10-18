@@ -1,0 +1,132 @@
+button {
+  cursor: pointer;
+  transition: transform 50ms ease-in-out;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+.cart-container {
+  margin-top: 150px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-list {
+  margin-top: 50px;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 450px;
+  border-bottom: 1px solid #c6c6c6;
+}
+
+@media screen and (max-width: 768px) {
+  .cart-item {
+    width: 450px;
+  }
+
+  .cart-item h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .cart-item,
+  #cart-total {
+    width: 600px !important;
+  }
+
+  .cart-item h2 {
+    font-size: 24px;
+  }
+}
+
+.cart-item-name {
+  font-size: 24px;
+}
+
+.cart-item:last-of-type {
+  border-bottom: none;
+}
+
+.cart-item-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.cart-item-details {
+  margin-left: 50px;
+  height: 50px;
+}
+
+.cart-item-price {
+  margin-left: auto;
+  height: 50px;
+}
+
+#cart-total {
+  /* margin-top: 50px; */
+  font-size: 32px;
+  font-weight: 700;
+  width: 450px;
+  text-align: end;
+}
+
+.cart-item-actions {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart-item-action {
+  font-size: 14px;
+  background: black;
+  border-radius: 100%;
+  width: 23px;
+  height: 23px;
+  border: none;
+  color: white;
+  text-align: center;
+  padding-left: 1px;
+}
+
+.btn-submit {
+  width: 180px;
+  height: 50px;
+  margin-top: 50px;
+  border: none;
+  color: white;
+  background: #000;
+  border-radius: 25px;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+}
+
+i.success {
+  color: rgb(100, 221, 112);
+}
+
+p.error {
+  height: 50px;
+  width: 80%;
+  background: rgba(255, 153, 153, 0.437);
+  margin-top: 50px;
+  color: red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}

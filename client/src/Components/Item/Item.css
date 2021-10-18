@@ -1,0 +1,144 @@
+.item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  width: 250px;
+  height: 350px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 10px;
+  box-shadow: 0px 0px 15px 0px rgb(215, 215, 215);
+  transition: transform 150ms ease-in-out;
+}
+
+.item * {
+  pointer-events: none;
+}
+
+.item:hover,
+.item:focus {
+  transform: translateY(-5px);
+}
+
+.item:hover .item-add,
+.item:focus .item-add {
+  opacity: 1;
+}
+
+.item-add {
+  cursor: pointer;
+  pointer-events: all;
+  opacity: 0;
+  margin-left: auto;
+  margin-right: 15px;
+  margin-top: 5px;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  color: white;
+  border-radius: 100%;
+  transition: opacity 100ms ease-in-out, transform 50ms ease-in-out;
+  border: none;
+  transform: rotate(0deg);
+}
+
+.item-add.added {
+  opacity: 1;
+}
+
+.item-add:active {
+  transform: translateY(2px);
+}
+
+.item-add i {
+  pointer-events: none;
+}
+
+.anim-rotate-in {
+  animation-name: anim-rotate-in;
+  animation-timing-function: ease-in-out;
+  animation-duration: 300ms;
+}
+
+@keyframes anim-rotate-in {
+  0% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.item-name {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.item-desc {
+  padding: 0px 10px;
+  margin-bottom: auto;
+  color: #8b8b8b;
+}
+
+.item-price {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.item-img-wrapper {
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.item-img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.flip {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.color-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: auto 0;
+}
+
+.color-container .color {
+  position: relative;
+  cursor: pointer;
+  pointer-events: all;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  background: #000;
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px 1px rgb(215, 215, 215);
+}
+
+.color.selected::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  height: 25px;
+  width: 25px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px 1px rgb(215, 215, 215);
+  border: 2px solid rgb(161, 161, 161);
+}
+
+.color-container .color:last-of-type {
+  margin-right: 0;
+  background: rosybrown;
+}
